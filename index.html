@@ -4,399 +4,116 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initialscale=1.0">
         <title>Ronin Sanouvong</title>
-        <style>
-            *{
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-            }
-            body{
-                background-image: linear-gradient(to right, rgb(7, 121, 129), rgb(160, 8, 109));
-                background-repeat: no-repeat;
-                background-size: 100% 600vh;
-                color: antiquewhite;
-                font-family: "Source Sans Pro";
-            }
-            .header{
-                background-color: white;
-                height: 10vh;
-                position: fixed;
-                top: 0;
-                width: 100%;
-                color: black;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                z-index: 9;
-            }
-            .avatar{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-            .avatar img{
-                height: 70px;
-                width: 70px;
-                display: inline-block;
-                scale: 0.8;
-                border-radius: 40px;
-                margin: 0px 10px 0px 30px;
-            }
-            .nav{
-                text-transform: uppercase;
-                display: flex;
-                width: max-content;
-                justify-content: space-evenly;
-                align-items: center;
-                margin-right: 30px;
-            }
-            .nav .nav-item{
-                display: inline-block;
-                padding: 10px;
-                margin: 0px 10px;
-
-            }
-            .intro{
-                height: 100vh;
-                background-color: transparent;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                flex-direction: column;
-                font-size: 250%;
-                letter-spacing: 17px;
-                line-height: 270%;
-            }
-            .intro b{
-                font-family: 'Times New Roman', Times, serif;
-            }
-            #downarrow{
-                height: 40px;
-                width: 40px;
-                position: absolute;
-                top: 90vh;
-            }
-            #downarrow:hover{
-                /*scale: 1.2;*/
-                transform: translatey(-3px);
-            }
-            .about{
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: 80vh;
-                width: 100fr;
-                margin: 20px;
-                background-color: white;
-                border-radius: 20px;
-                color: black;
-            }
-            .about .center-title{
-                text-align: center;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-            }
-            .center-title h1{
-                font-size: 200%;
-            }
-            .about p::first-letter{
-               font-family: 'Times New Roman', Times, serif;
-               font-size: 280%;
-               float: left;
-               line-height: 50px;
-               padding: 2px;
-               
-            }
-            .about p{
-                line-height: 30px;
-            }
-            .center-title p{
-                width: 40%;
-            }
-            .center-title hr{
-                width: 40px;
-                border:2px solid black;
-                margin: 10px;
-            }
-            .about-content{
-                display: flex;
-                justify-content: space-around;
-            }
-            .about-content .left-content, .about-content .right-content{
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: start;
-                padding: 50px;
-                border-radius: 20px;
-                border: 2px solid rgba(0, 0, 0, 0.096);
-            }
-            .left-content, .right-content{
-                margin: 60px 0;
-                width: 40%;
-            }
-            .left-content p{
-                margin: 20px;
-            }
-            .right-content .skill{
-                display: inline-block;
-                padding: 10px;
-                margin: 5px;
-                background-color: rgb(221, 221, 221);
-                color: rgb(131, 131, 131);
-                border-radius: 5px;
-            }
-            .skill::first-letter{
-                font-size: 120%;
-                font-family: 'Times New Roman', Times, serif;
-            }
-            .projects{
-                height: 70vh;
-                width: 100%;
-                padding: 70px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: rgb(248, 248, 248);
-                color: black;
-            }
-            .project{
-                height: 50vh;
-                width: 100%;
-                padding: 70px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                background-color: rgb(248, 248, 248);
-                color: black;
-            }
-            .project-content{
-                width: 40%;
-                font-size: 150%;
-                letter-spacing: 110%;
-                line-height: 160%;
-            }
-            .project-content img{
-                height: 300px;
-                width: 500px;
-                object-fit: cover;
-                scale: 1.0;
-                border-radius: 20px;
-            }
-            .project-content h2, .project-content p{
-                margin: 20px;
-            }
-            .project-content h1{
-                margin-bottom: 70px;
-            }
-            .hr{
-                width: 100%;
-                background-color: rgb(248, 248, 248);
-                padding: 50px 0px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-            }
-            .hr hr{
-                width: 80%;
-                margin: 10px 0;
-            }
-            .contact{
-                
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                height: max-content;
-                width: 800px;
-                margin: 100px auto;
-                background-color: white;
-                border-radius: 20px;
-                color: black;
-            }
-            .contact div{
-                padding:20px;
-                margin: 20px;
-                background-color: rgb(248, 248, 248);
-                border-radius: 20px;
-            }
-            .field{
-                width: 80%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-            .field form{
-                
-                width: 80%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            }
-            .contact input{
-                border: 0px solid transparent;
-                width: 100%;
-                margin: 5px;
-                padding: 20px;
-                border-radius: 5px;
-            }
-            .footer{
-                width: 100%;
-                height: 10vh;
-                background-color: white;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                color:black;
-                font-size: 50%;
-            }
-            .footer p{
-                margin-left: 50px;
-            }
-            .footer .nav{
-                margin-right: 50px;
-            }
-            a:link{
-                color: inherit;
-                text-decoration: inherit;
-            }
-            a:visited{
-                color: inherit;
-                text-decoration: inherit;
-            }
-            a:hover{
-                color: inherit;
-                text-decoration: inherit;
-            }
-            a:active{
-                color: inherit;
-                text-decoration: inherit;
-            }
-        </style>
+        <link rel="stylesheet" href="./resume2-style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap">
+
     </head>
     <body>
-        <div class="header">
-            <a href="https://stevenscollege.edu">
-            <div class="avatar">
-                <img src="images/PitMarth.png">
-                <h2>Ronin Sanouvong</h2>
-            </div>
-            </a>
-            <div class="nav">
-                <a href="#"><h3 class="nav-item">home</h3></a>
-                <a href="#about"><h3 class="nav-item">about</h3></a>
-                <a href="#projects"><h3 class="nav-item">projects</h3></a>
-                <a href="#contact"><h3 class="nav-item">contact</h3></a>
-            </div>
+        <div class="background-gradient">
         </div>
-        <div class="intro">
-            <h1>This is <b>R</b>onin <b>S</b>anouvong</h1>
-            <p>TSCT Student and Game Developer</p>
-            <a href="#about" id="about"><img src="images/downarrow.png" alt="" id="downarrow"></a>
+        <div class="background-image">
         </div>
-        <div class="about">
-            <div class="center-title">
-                <h1>About Me</h1>
-                <hr>
-                <p>My name is Ronin Sanouvong, A college student at Thaddeus Stevens College of Technology. Currently, I am pursuing Computer Software Engineering Technology ( CSET ) as my major and have made a few games as well, though none are published anywhere but itch.io and here.</p>
-            </div>
-            <div class="about-content">
-                <div class="left-content">
-                    <h2>Get to know me!</h2>
-                    <p>I grew up in Eastern Lancaster County of Pennslvania, USA. The farmland rich area I was in led to a peaceful childhood that fostered my artist mind. Today I use art and coding for game development as it is my current favorite hobby and interest</p>
+            <div class="header">
+                <a class="avatar-parent" href="https://alexseisler.github.io/Thaddeus-Results/">
+                    <div class="avatar">
+                        <img src="images/PitMarth.png">
+                        <h2>Ronin Sanouvong</h2>
+                    </div>
+                </a>
+                <div class="nav">
+                    <ion-icon id="menu-button" name="ellipsis-horizontal"></ion-icon>
+                    <a href="#intro"><h3 class="nav-item">home</h3></a>
+                    <a href="#about"><h3 class="nav-item">about</h3></a>
+                    <a href="#projects"><h3 class="nav-item">projects</h3></a>
+                    <a href="#contact"><h3 class="nav-item">contact</h3></a>
                 </div>
-                <div class="right-content">
-                    <h2>My Skills</h2>
-                    <div class="skillset">
-                        <h4 class="skill">2D Art</h4>
-                        <h4 class="skill">2D Animation</h4>
-                        <h4 class="skill">C#</h4>
-                        <h4 class="skill">Python</h4>
-                        <h4 class="skill">Javascript</h4>
-                        <h4 class="skill">HTML</h4>
-                        <h4 class="skill">CSS</h4>
-                        <h4 class="skill">Unity</h4>
-                        <h4 class="skill">Web & Graphic Design</h4>
-                        <h4 class="skill">Game & Level Design</h4>
-                        <h4 class="skill">Game Testing</h4>
-                        <h4 class="skill">Bug Fixing</h4>
-                        <h4 class="skill">3D Modeling</h4>
+            </div>
+            <div class="intro" id="intro">
+                <h1>This is <b>R</b>onin <b>S</b>anouvong</h1>
+                <p>TSCT Student and Game Developer</p>
+                <a href="#about" id="about"><img src="images/downarrow.png" alt="" id="downarrow"></a>
+            </div>
+            <div class="about">
+                <div class="center-title">
+                    <h1>About Me</h1>
+                    <hr>
+                    <p>My name is Ronin Sanouvong, A college student at Thaddeus Stevens College of Technology. Currently, I am pursuing Computer Software Engineering Technology ( CSET ) as my major and have made a few games as well, though none are published anywhere but itch.io and here.</p>
+                </div>
+                <div class="about-content">
+                    <div class="left-content">
+                        <h2>Get to know me!</h2>
+                        <p>I grew up in Eastern Lancaster County of Pennslvania, USA. The farmland rich area I was in led to a peaceful childhood that fostered my artist mind. Today I use art and coding for game development as it is my current favorite hobby and interest</p>
+                    </div>
+                    <div class="right-content">
+                        <h2>My Skills</h2>
+                        <div class="skillset">
+                            <h4 class="skill">2D Art</h4>
+                            <h4 class="skill">2D Animation</h4>
+                            <h4 class="skill">C#</h4>
+                            <h4 class="skill">Python</h4>
+                            <h4 class="skill">Javascript</h4>
+                            <h4 class="skill">HTML</h4>
+                            <h4 class="skill">CSS</h4>
+                            <h4 class="skill">Unity</h4>
+                            <h4 class="skill">Web & Graphic Design</h4>
+                            <h4 class="skill">Game & Level Design</h4>
+                            <h4 class="skill">Game Testing</h4>
+                            <h4 class="skill">Bug Fixing</h4>
+                            <h4 class="skill">3D Modeling</h4>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div #id="samuraishowdownproject">
-            <div class="projects">
-                <div class="project-content" id="projects">
-                    <h1>Samurai Showdown *</h1>
-                    <img src="images/cs-academy-canvas.png" alt="" style="object-position: 10% 10%;">
-                    <p style="font-size: 20%; margin: 0;">*name not finalized</p>
-                </div>
-                <div class="project-content">
-                    <h3>A 2-player Platform Fighter</h3>
-                    <p>Samurai Showdown is one of my first projects that I have created to completion. The project has one mode and two characters, one for player one and one for player two. The game features 1 on 1 combat using arc shapes as sword swings and rect shapes as a projectile with jumps, a double jump, a glide on player two, and different movement stats.</p>
-                </div>
-            </div>
-            <div class="project">
-                <h1>Play the game!</h1>
-                <div>
-                    <iframe width="410" height="420"
-                    style="margin:30px"
-                    src="https://academy.cs.cmu.edu/sharing/mistyRoseCrocodile5409/embed"> 
-                </iframe> 
+            <div id="samuraishowdownproject">
+                <div class="projects">
+                    <div class="project-content" id="projects">
+                        <h1>Samurai Showdown</h1>
+                        <img src="images/cs-academy-canvas.png" alt="" style="object-position: 10% 10%;">
+                    </div>
+                    <div class="project-content">
+                        <h3>A 2-player Platform Fighter</h3>
+                        <p>Samurai Showdown is one of my first projects that I have created to completion. The project has one mode and two characters, one for player one and one for player two. The game features 1 on 1 combat using arc shapes as sword swings and rect shapes as a projectile with jumps, a double jump, a glide on player two, and different movement stats.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="hr"><hr><hr></div>
-        <div #id="gamedataproject">
-            <div class="projects">
-                <div class="project-content ">
-                    <h1>Graphing Game Statistics</h1>
-                    <img src="images/cs-academy-canvas2.png" alt="" style="object-position: 10% 10%;">
-                </div>
-                <div class="project-content">
-                    <h3>Using Code to Graph a CSV file</h3>
-                    <p>One of my other projects was to use a CSV file containing statistics in a sheet format and convert it into a graph for visualization. This is a very successful adaptation of this containing a CSV from wikipedia data of all the top 256 games from 2016 with different formats you can look at by using the arrow keys.</p>
-                </div>
-            </div>
-            <div class="project">
-                <h1>Here is the Project!</h1>
-                <div>
-                    <iframe width="410" height="420"
-                    style="margin:30px"
-                    src="https://academy.cs.cmu.edu/sharing/dimGrayLion8026/embed">
-                </iframe> 
+            <div class="hr"><hr><hr></div>
+            <div id="gamedataproject">
+                <div class="projects">
+                    <div class="project-content ">
+                        <h1>Graphing Game Statistics</h1>
+                        <img src="images/cs-academy-canvas2.png" alt="" style="object-position: 10% 10%;">
+                    </div>
+                    <div class="project-content">
+                        <h3>Using Code to Graph a CSV file</h3>
+                        <p>One of my other projects was to use a CSV file containing statistics in a sheet format and convert it into a graph for visualization. This is a very successful adaptation of this containing a CSV from wikipedia data of all the top 256 games from 2016 with different formats you can look at by using the arrow keys.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="hr"><hr><hr></div>
-        <div class="contact" id="contact">
-            <h1>Contact Me</h1>
-            <div class="field">
-                <form action="#" class="contact_form">
-                <h2>Email</h2>
-                <input required placeholder="Enter Your Email" type="text" name="email"/>
-                <form action="#" class="contact_form">
-                <h2>Name</h2>
-                <input required placeholder="Enter Your Name" type="text" name="name"/>
+            <div class="hr"><hr><hr></div>
+            <div class="contact" id="contact">
+                <h1>Contact Me</h1>
+                <div class="field">
+                    <form action="#" class="contact_form">
+                    <h2>Email</h2>
+                    <input required placeholder="Enter Your Email" type="text" name="email"/>
+                    <form action="#" class="contact_form">
+                    <h2>Name</h2>
+                    <input required placeholder="Enter Your Name" type="text" name="name"/>
+                </div>
+                
             </div>
-        </div>
-        <div class="footer">
-            <p>Website made by Ronin Sanouvong</p>
-            <div class="nav">
-                <a href="#"><h3 class="nav-item">home</h3></a>
-                <a href="#about"><h3 class="nav-item">about</h3></a>
-                <a href="#projects"><h3 class="nav-item">projects</h3></a>
-                <a href="#contact"><h3 class="nav-item">contact</h3></a>
+            <div class="footer">
+                <p>© 2024 Stevens Results. All Rights Reserved.</p>
+                <div class="nav">
+                    <a href="#"><h3 class="nav-item">X</h3></a>
+                    <a href="#"><h3 class="nav-item">LinkedIn</h3></a>
+                    <a href="#"><h3 class="nav-item">Discord</h3></a>
+                    <a href="#"><h3 class="nav-item">Itch</h3></a>
+                </div>
             </div>
-        </div>
+    <script src="./smooth-anchor.js"></script>
+    <!--<script src="./test.js"></script> This script is for a button that can preview the website by replacing my text with personalized text.-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     </body>
 </html>
-
