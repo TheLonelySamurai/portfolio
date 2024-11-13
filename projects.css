@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    min-height: 150vh; /* Ensure the page expands */
+    min-height: 80vh; /* Ensure the page expands */
     max-height: max-content;
     width: 80vw;
     margin: 20px auto 100px auto;
@@ -25,12 +25,13 @@
     align-items: center;
     width: 100%;
     min-height: 300px; /* Ensure a minimum height for each section */
-    max-height: max-content;
+    max-height: 30%;
     border-radius: 100px;
     overflow: hidden; /* Prevent overflow when changing content */
     position: relative;
-    transition: height 1s ease;
     background-color: rgb(199, 210, 220);
+    transition: opacity 1s ease, min-height 1s ease;
+
 }
 
 /* Image Wrapper */
@@ -66,7 +67,7 @@
     left: 0;
     opacity: 0;
     height: 0; /* Start with 0 height */
-    transition: opacity 1s ease, height 5s ease;
+    transition: opacity 1s ease, height 1s ease;
 }
 
 /* Hover Effect - Only reveal image and content on hover */
@@ -102,6 +103,12 @@
 /* Specific adjustments for each section */
 .project-page-source.csacademy {
     /* Additional styles for CS Academy */
+    .innercontent{
+        display: flex;
+        align-items:center;
+        justify-content: space-around;
+        flex-wrap: wrap ;
+    }
 }
 
 .project-page-source.webapps {
@@ -110,4 +117,10 @@
 
 .project-page-source.unity {
     /* Additional styles for Unity */
+    .innercontent{
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-content: space-around;
+    }
 }

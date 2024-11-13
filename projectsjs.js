@@ -5,20 +5,21 @@ const projectSections = document.querySelectorAll('.project-page-source');
 // Function to handle hover effect for different project sections
 function handleHover(element) {
     // Add styles to expand the page height
+    window.scroll(0, 1100);
     projectsPage.style.minHeight = "150vh";
 
     // Loop through all project sections and apply styling
     projectSections.forEach(section => {
         // Reset each section's display to block by default
         section.style.display = "flex";
-        section.style.height = ""; // Remove any previous height restrictions
+        section.style.minHeight = ""; // Remove any previous height restrictions
         section.style.borderRadius = ""; // Reset corner rounding
     });
 
     // Apply styling specific to the hovered element
     if (element) {
         element.style.width = "100%";
-        element.style.height = "150vh"; // Taller section
+        element.style.minHeight = "150vh"; // Taller section
         element.style.borderRadius = "200px"; // Significant rounding
         // Hide all sections except the hovered section
         projectSections.forEach(section => {
@@ -36,11 +37,12 @@ document.querySelectorAll('.project-page-source').forEach(project => {
     });
 
     project.addEventListener('mouseleave', () => {
+        window.scroll(0, 1100);
         // Reset the styling when the hover ends
         projectsPage.style.minHeight = "";
         projectSections.forEach(section => {
             section.style.display = "";
-            section.style.height = "";
+            section.style.minHeight = "";
             section.style.borderRadius = "";
         });
     });
