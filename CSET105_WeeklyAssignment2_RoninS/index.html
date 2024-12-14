@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Weekly Assignment 2 Hubpage</title>
+        <link rel="stylesheet" href="./mainstyle.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Quicksand:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header>
+            <ul class="nav">
+                <li>Made by Ronin Sanouvong</li>
+            </ul>
+        </header>
+        <div class="main-content">
+            <h3>This is Ronin Sanouvong's</h3>
+            <h1>COLLECTION OF ASSIGNMENT PROJECTS</h1>
+            <h4>for Thaddeus Stevens CSET</h4>
+            <p>See below for more!</p>
+            <div class="container">
+                <div class="hoverme">
+                    <h3>Hover over me!</h3>
+                </div>
+                <div class="assignment assignment1">
+                    <div class="hoverme">
+                        <h3>Multiplication Tables</h3>
+                    </div>
+                    <div class="inside-content assignment1">
+                        <h2>Multiplication Tables</h2>
+                        <button onclick="MultiTable1()" class="quickopOut">Start Simulation</button>
+                        <div class="a1con1">
+                            <div class="a1con1-item a1con1-left">
+                            </div>
+                            <div class="a1con1-item a1con1-right">
+                            </div>
+                        </div>
+                    </div>  
+                </div> 
+
+                <div class="assignment assignment2">
+                    <div class="hoverme">
+                        <h3>Rock Paper Scissors</h3>
+                    </div>
+                    <div class="inside-content assignment2">
+                        <h2>Rock Paper Scissors</h2>
+                        <div class="a2con1">
+                            <button onclick="rock()" style="overflow: hidden;"><img src="./images/rock.jpg" style="scale: 1.2;"></button>
+                            <button onclick="paper()"><img src="./images/paper.png"></button>
+                            <button onclick="scissors()"><img src="./images/scissors.png"></button>
+                        </div>
+                        <div class="a2con2">
+                            <h5 class="left">
+
+                            </h5>
+                            <h5 class="right">
+
+                            </h5>
+                        </div>
+                        <h3 class="a2-result">
+
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="assignment assignment3">
+                    <div class="hoverme">
+                        <h3>Buttons!</h3>
+                    </div>
+                    <div class="inside-content assignment3">
+                        <h2>Buttons!</h2>
+                        <div class="a3con1">  
+                        </div>
+                        <select class="a3-select" onchange="colorSwap(this.value)">
+                            <option value="red">Red</option>
+                            <option value="blue">Blue</option>
+                            <option value="green">Green</option>
+                            <option value="Random">Random</option>
+                            <option value="Reset">Reset</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="assignment assignment4">
+                    <div class="hoverme">
+                        <h3>Grocery List</h3>
+                    </div>
+                    <div class="inside-content assignment4">
+                        <h2>Grocery List</h2>
+                        <div class="a4con1">
+                            <button onclick="AddToList()">Add To List</button>
+                            <button onclick="ModifyList()">Modify List Items</button>
+                            <button onclick="SortList()">Sort List</button>
+                        </div>
+                        <div class="a4-splitter">
+                            <div class="a4con0">
+                                <h1>List</h1>
+                                <div class="a4con2">
+
+                                </div>
+                            </div>
+                            
+                            <div class="a4con3">
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="assignment assignment5">
+                    <div class="hoverme">
+                        <h3>Quiz</h3>
+                    </div>
+                    <div class="inside-content assignment5">
+                        <h2>Quiz Time!</h2>
+                        <div class="a5-container">
+                                <div class="a5-question">
+                                    <div class="left">
+                                        <h2>What is this?</h2>
+                                        <img src="./images/ceaserinthefreezer.jpg">
+                                    </div>
+                                    <div class="right">
+                                              <div>
+                                                <legend>Question 1</legend>
+                                                <input type="radio" id="q1a" name="Question 1" value="A" />
+                                                <label for="q1a">Julius in the Coolius</label>
+                                                <br>
+                                                <input type="radio" id="q1b" name="Question 1" value="B" />
+                                                <label for="q1b">Ruler in the Cooler</label>
+                                                <br>
+                                                <input type="radio" id="q1c" name="Question 1" value="C" />
+                                                <label for="q1c">Ceaser in the Freezer</label>
+                                                <br>
+                                                <input type="radio" id="q1d" name="Question 1" value="D" />
+                                                <label for="q1d">Roman Emperor at a Lower Temperature</label>
+                                              </div>
+                                              <div>
+                                                <button onclick="scrollDown()">Next</button>
+                                              </div>
+                                    </div>
+                                </div>
+                                <div class="a5-question">
+                                    <div class="left">
+                                        <h2>What is this?</h2>
+                                        <img src="./images/ceaserinthefreezer.jpg">
+                                    </div>
+                                    <div class="right">
+                                              <div>
+                                                <legend>Question 2</legend>
+                                                <input type="radio" id="q2a" name="Question 2" value="A" />
+                                                <label for="qa">Julius in the Coolius</label>
+                                                <br>
+                                                <input type="radio" id="q2b" name="Question 2" value="B" />
+                                                <label for="q2b">Ruler in the Cooler</label>
+                                                <br>
+                                                <input type="radio" id="q2c" name="Question 2" value="C" />
+                                                <label for="q2c">Ceaser in the Freezer</label>
+                                                <br>
+                                                <input type="radio" id="q2d" name="Question 2" value="D" />
+                                                <label for="q2d">Roman Emperor at a Lower Temperature</label>
+                                              </div>
+                                              <div>
+                                                <button onclick="scrollDown()">Next</button>
+                                              </div>
+                                    </div>
+                                </div>
+                                <div class="a5-question">
+                                    <div class="left">
+                                        <h2>What is this?</h2>
+                                        <img src="./images/ceaserinthefreezer.jpg">
+                                    </div>
+                                    <div class="right">
+                                              <div>
+                                                <legend>Question 3</legend>
+                                                <input type="radio" id="q3a" name="Question 3" value="A" />
+                                                <label for="q3a">Julius in the Coolius</label>
+                                                <br>
+                                                <input type="radio" id="q3b" name="Question 3" value="B" />
+                                                <label for="q3b">Ruler in the Cooler</label>
+                                                <br>
+                                                <input type="radio" id="q3c" name="Question 3" value="C" />
+                                                <label for="q3c">Ceaser in the Freezer</label>
+                                                <br>
+                                                <input type="radio" id="q3d" name="Question 3" value="D" />
+                                                <label for="q3d">Roman Emperor at a Lower Temperature</label>
+                                              </div>
+                                              <div>
+                                                <button onclick="scrollDown()">Next</button>
+                                              </div>
+                                    </div>
+                                </div>
+                                <div class="a5-question">
+                                    <div class="left">
+                                        <h2>What is this?</h2>
+                                        <img src="./images/ceaserinthefreezer.jpg">
+                                    </div>
+                                    <div class="right">
+                                              <div>
+                                                <legend>Question 4</legend>
+                                                <input type="radio" id="q4a" name="Question 4" value="A" />
+                                                <label for="q4a">Julius in the Coolius</label>
+                                                <br>
+                                                <input type="radio" id="q4b" name="Question 4" value="B" />
+                                                <label for="q4b">Ruler in the Cooler</label>
+                                                <br>
+                                                <input type="radio" id="q4c" name="Question 4" value="C" />
+                                                <label for="q4c">Ceaser in the Freezer</label>
+                                                <br>
+                                                <input type="radio" id="q4d" name="Question 4" value="D" />
+                                                <label for="q4d">Roman Emperor at a Lower Temperature</label>
+                                              </div>
+                                    </div>
+                                </div>
+                            <div class="a5con2">
+                                <button id="endButton" onclick="checkAnswers()">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src="./multiTables.js"></script>
+    <script src="./rps.js"></script>
+    <script src="./buttons.js"></script>
+    <script src="./grocery.js"></script>
+    <script src="./form.js"></script>
+</html>
