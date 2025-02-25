@@ -45,6 +45,10 @@ body{
         background-position-x: 40%;
     }
 }
+/*highlight*/
+.highlight{
+    color: rgb(160, 8, 109);
+}
 /*header*/
 .header{
     background-color: white;
@@ -350,6 +354,9 @@ body{
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        & p{
+            color: black;
+        }
     }
     .center-title h1{
         font-size: 200%;
@@ -393,17 +400,24 @@ body{
         margin: 20px;
     }
     .right-content .skillset{
+        height: 90%;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
     .right-content .skill{
         display: inline-block;
+        height: fit-content;
         padding: 10px;
         margin: 5px;
         background-color: rgb(221, 221, 221);
         color: rgb(131, 131, 131);
         border-radius: 5px;
+        &:hover{
+            scale: 1.1;
+            color:rgb(160, 8, 109);
+            background-color: rgb(230, 188, 215);
+        }
     }
     .skill::first-letter{
         font-size: 120%;
